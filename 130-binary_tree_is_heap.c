@@ -2,13 +2,16 @@
 #include "102-binary_tree_is_complete.c"
 
 /**
- * check_max - Recursively checks if all nodes in a binary tree have max values.
+ * check_max - Recursively checks if all nodes in a binary tree
+ * have max values.
  * @tree: Pointer to the root node.
  *
  * Return: 1 if all nodes have max values, 0 otherwise.
  *
- * Description: This function recursively checks if all nodes in the binary tree
- * have values greater than their children, indicating a max heap property.
+ * Description: This function recursively checks if all nodes
+ * in the binary tree
+ * have values greater than their children, indicating a max
+ * heap property.
  */
 int check_max(const binary_tree_t *tree)
 {

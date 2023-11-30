@@ -57,7 +57,7 @@ int remove_type(bst_t *root)
 
 	if (!root->left && !root->right)
 	{
-		// Node has no children
+		/** Node has no children **/
 		if (root->parent->right == root)
 			root->parent->right = NULL;
 		else
@@ -67,10 +67,10 @@ int remove_type(bst_t *root)
 	}
 	else if ((!root->left && root->right) || (!root->right && root->left))
 	{
-		// Node has one child
+		/** Node has one child **/
 		if (!root->left)
 		{
-			// Node has only a right child
+			/** Node has only a right child **/
 			if (root->parent->right == root)
 				root->parent->right = root->right;
 			else
@@ -79,7 +79,7 @@ int remove_type(bst_t *root)
 		}
 		if (!root->right)
 		{
-			// Node has only a left child
+			/** Node has only a left child **/
 			if (root->parent->right == root)
 				root->parent->right = root->left;
 			else
@@ -91,7 +91,7 @@ int remove_type(bst_t *root)
 	}
 	else
 	{
-		// Node has two children
+		/** Node has two children **/
 		new_value = successor(root->right);
 		root->n = new_value;
 		return (new_value);

@@ -4,7 +4,8 @@
  * height - Calculates the height of a binary tree.
  * @tree: A pointer to the root node of the tree.
  *
- * Return: If the tree is NULL, the function returns 0; otherwise, it returns the height.
+ * Return: If the tree is NULL, the function returns 0; otherwise,
+ * it returns the height.
  */
 size_t height(const binary_tree_t *tree)
 {
@@ -12,6 +13,7 @@ size_t height(const binary_tree_t *tree)
 	{
 		size_t left_height = tree->left ? 1 + height(tree->left) : 1;
 		size_t right_height = tree->right ? 1 + height(tree->right) : 1;
+
 		return (left_height > right_height ? left_height : right_height);
 	}
 	return (0);
@@ -21,7 +23,8 @@ size_t height(const binary_tree_t *tree)
  * balance - Calculates the balance factor of a binary tree.
  * @tree: A pointer to the root node of the tree.
  *
- * Return: If the tree is NULL, the function returns 0; otherwise, it returns the balance factor.
+ * Return: If the tree is NULL, the function returns 0; otherwise,
+ * it returns the balance factor.
  */
 int balance(const binary_tree_t *tree)
 {
@@ -37,7 +40,8 @@ int balance(const binary_tree_t *tree)
  *
  * Return: A pointer to the new root after insertion, or NULL on failure.
  */
-avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent, avl_t **new, int value)
+avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
+		 avl_t **new, int value)
 {
 	int bfactor;
 

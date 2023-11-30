@@ -128,6 +128,6 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
     while (head != NULL)
     {
         pint_push(head->node, head, &tail, func);
-        pop_queue(&head);
+        pop(&head);
     }
 }

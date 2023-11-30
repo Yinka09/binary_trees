@@ -13,15 +13,15 @@ int binary_tree_is_avl(const binary_tree_t *tree);
  */
 size_t height(const binary_tree_t *tree)
 {
-    if (tree)
-    {
-        size_t left_height = 0, right_height = 0;
+	if (tree)
+	{
+		size_t left_height = 0, right_height = 0;
 
-        left_height = tree->left ? 1 + height(tree->left) : 1;
-        right_height = tree->right ? 1 + height(tree->right) : 1;
-        return ((left_height > right_height) ? left_height : right_height);
-    }
-    return (0);
+		left_height = tree->left ? 1 + height(tree->left) : 1;
+		right_height = tree->right ? 1 + height(tree->right) : 1;
+		return ((left_height > right_height) ? left_height : right_height);
+	}
+	return (0);
 }
 
 /**
@@ -34,25 +34,26 @@ size_t height(const binary_tree_t *tree)
  */
 int avl_helper(const binary_tree_t *tree, int low, int high)
 {
-    size_t left_height, right_height, height_diff;
+	size_t left_height, right_height, height_diff;
 
-    if (tree != NULL)
-    {
-        if (tree->n < low || tree->n > high)
-            return (0);
+	if (tree != NULL)
+	{
+		if (tree->n < low || tree->n > high)
+			return (0);
 
-        left_height = height(tree->left);
-        right_height = height(tree->right);
-        height_diff = (left_height > right_height) ? left_height - right_height : right_height - left_height;
+		left_height = height(tree->left);
+		right_height = height(tree->right);
+		height_diff = (left_height > right_height) ? left_height - right_height
+			 : right_height - left_height;
 
-        if (height_diff > 1)
-            return (0);
+		if (height_diff > 1)
+			return (0);
 
-        return (avl_helper(tree->left, low, tree->n - 1) &&
-                avl_helper(tree->right, tree->n + 1, high));
-    }
+		return (avl_helper(tree->left, low, tree->n - 1) &&
+				avl_helper(tree->right, tree->n + 1, high));
+	}
 
-    return (1);
+	return (1);
 }
 
 /**
@@ -63,9 +64,9 @@ int avl_helper(const binary_tree_t *tree, int low, int high)
  */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    return (avl_helper(tree, INT_MIN, INT_MAX));
+	return (avl_helper(tree, INT_MIN, INT_MAX));
 }
 
