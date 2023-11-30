@@ -1,3 +1,5 @@
+#include "binary_trees.h"
+
 /**
  * binary_tree_delete - Deletes an entire binary tree.
  *

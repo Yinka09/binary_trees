@@ -1,3 +1,5 @@
+#include "binary_trees.h"
+
 /**
  * bst_search - Searches for a value in a Binary Search Tree (BST).
  *

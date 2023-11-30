@@ -1,3 +1,5 @@
+#include "binary_trees.h"
+
 /**
  * create_node - Creates a new node for a level-order traversal queue.
  * @node: The binary tree node to be stored in the new queue node.
